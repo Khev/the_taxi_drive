@@ -1,2 +1,3 @@
-Here are some files for the taxi-drive process. These are the notebooks I used to create the paper
-in the paper: X
+Code for taxi-drive process. See sandbox for a quick tutorial on how the code works. Notebooks used
+to generate data for the paper ("Urban sensing as a random search process" -- link) are in the
+'calcs_for_paper' folder.
