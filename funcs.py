@@ -31,6 +31,11 @@ def random_walk_covertime(G, m = 1,num_trials=10):
     """
     Does a random walk until all nodes have been covered
     at least m times. Does this for num_trials times.
+    
+    Input: nx.graph, G
+           int, m
+           
+    Output: list, Ts, covertimes
     """
     
     nodes = [node for node in G.nodes()]  #assume labeled 0,1,2,....n-1
@@ -55,10 +60,16 @@ def random_walk_covertime(G, m = 1,num_trials=10):
 
 
 
-def urban_explorer_covertime(G,m,num_trials=10):
+def taxi_drive_covertime(G,m,num_trials=10):
     """
-    Does an urban explorer until all nodes have been covered
+    Does a a taxi-drive until all nodes have been covered
     at least m times. Does this for num_trials times.
+    
+ 
+    Input: nx.graph, G
+           int, m
+           
+    Output: list, Ts, covertimes
     """
 
     nodes = [node for node in G.nodes()]
@@ -95,12 +106,18 @@ def urban_explorer_covertime(G,m,num_trials=10):
 
 
 
-def urban_explorer_stationary_densities(G,counts,T):
+def taxi_drive_stationary_densities(G,counts,T):
     """
     Does an urban explorer process on the nx.graph G for T timesteps.
     Counts[i] = number of times nodes i has been touched. I'll feed this in
     as an arrays of zeros to start. But I can run simulations back-to-back
-    if I need to. 
+    if I need to.
+    
+    Input: nx.graph, G
+           array, counts, see above
+           int, T, num time steps
+           
+    Output: array, counts
     """
 
     nodes = [node for node in G.nodes()]
@@ -132,10 +149,15 @@ def urban_explorer_stationary_densities(G,counts,T):
 
 
 
-def urban_explorer_returntime(G,start_node,num_trials=10):
+def taxi_drive_returntime(G,start_node,num_trials=10):
+    
     """
-    Does an urban explorer until all nodes have been covered
-    at least m times. Does this for num_trials times.
+    Finds the return time for a taxi-drive for given node
+    
+    Input: nx.graph, G
+           int, start_node, node to start the process on (nodes are labeled serially from 0)
+           
+    Output: array, Ts, return times
     """
 
     nodes = [node for node in G.nodes()]
@@ -176,9 +198,14 @@ def urban_explorer_returntime(G,start_node,num_trials=10):
 
 
 def random_walk_returntime(G,start_node,num_trials=10):
+    
     """
-    Does a random walk until all nodes have been covered
-    at least m times. Does this for num_trials times.
+    Finds the return time for a taxi-drive for given node
+    
+    Input: nx.graph, G
+           int, start_node, node to start the process on (nodes are labeled serially from 0)
+           
+    Output: array, Ts, return times
     """
     
     nodes = [node for node in G.nodes()]  #assume labeled 0,1,2,....n-1
