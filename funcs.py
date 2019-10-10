@@ -50,7 +50,7 @@ def random_walk_covertime(G, m = 1,num_trials=10):
         num_unvisited_nodes = np.sum(counts < m)
         while num_unvisited_nodes > 0:
             time += 1
-            neighbours = G[current_position].keys()
+            neighbours = list(G.neighbors(current_position))
             new_position = np.random.choice(neighbours)
             counts[new_position] += 1
             current_position = new_position
@@ -217,7 +217,7 @@ def random_walk_returntime(G,start_node,num_trials=10):
         current_position = start_node
         while True:
             time += 1
-            neighbours = G[current_position].keys()
+            neighbours = list(G.neighbors(current_position))
             new_position = np.random.choice(neighbours)
             current_position = new_position
             if current_position == start_node:
